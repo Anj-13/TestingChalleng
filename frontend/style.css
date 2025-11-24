@@ -30,3 +30,85 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
+
+header{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    position: top;
+    top: 0;
+    z-index: 1000;
+}
+
+.disclaimer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto;
+}
+/*
+body {
+    padding-top: 50px;
+} */
+
+/* form CSS styling */
+form {
+    width: 30%;
+    margin: 48px;
+}
+
+.form-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* testing styling */
+
+.medicine-item {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 50%;
+    margin-right: auto;
+}
+
+.medicine-item h1 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: darkcyan;
+}
+
+.form-group{
+    margin-bottom: 15px;
+    height: 70px;
+}
+.error-message{
+    color: red;
+    font-size: 14px;
+    height: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.input-error{
+    border: 2px solid red
+}
+.error-message.show{
+    visibility: visible;
+    opacity: 1;
+}
+
+.success-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    display: none;
+}
