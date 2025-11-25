@@ -31,14 +31,12 @@ body {
 
 /* ---- Your custom styles below ---- */
 
-header{
+header {
     background-color: black;
     color: white;
     text-align: center;
     padding: 10px 20px;
-    position: top;
-    top: 0;
-    z-index: 1000;
+    margin-top: 30px;
 }
 
 .disclaimer {
@@ -48,67 +46,255 @@ header{
     flex-wrap: wrap;
     height: auto;
 }
-/*
-body {
-    padding-top: 50px;
-} */
 
-/* form CSS styling */
-form {
-    width: 30%;
-    margin: 48px;
+/* Main Layout */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.form-row{
+/* Forms Container - Side by Side Layout */
+.forms-container {
     display: flex;
+    gap: 20px;
     justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
-
-/* testing styling */
-
-.medicine-item {
+/* Individual Form Cards */
+.form-card {
+    flex: 1;
+    min-width: 300px;
     background: white;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 50%;
-    margin-right: auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
 
-.medicine-item h1 {
-    font-size: 1.5rem;
-    margin: 10px 0;
+.form-card h2 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Form Rows Styling */
+.form-rows {
+    margin-bottom: 20px;
+}
+
+.form-rows label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-rows input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-rows input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Button Styling */
+input[type="submit"], .delete-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+input[type="submit"]:not(.delete-btn) {
+    background-color: #007bff;
+    color: white;
+}
+
+input[type="submit"]:not(.delete-btn):hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Medicines List Section */
+.medicines-section {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.medicines-section h2 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Medicine Item Styling */
+.medicine-item {
+    background: #f8f9fa;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 6px;
+    border-left: 4px solid #007bff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.medicine-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.medicine-item h3 {
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
     color: darkcyan;
 }
 
-.form-group{
-    margin-bottom: 15px;
-    height: 70px;
+.medicine-item p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 1.1rem;
 }
-.error-message{
-    color: red;
-    font-size: 14px;
+
+.quick-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.quick-update-btn, .quick-delete-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.quick-update-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.quick-update-btn:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+.quick-delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.quick-delete-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Error and Success Messages */
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
     height: 20px;
+    margin-top: 5px;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-.input-error{
-    border: 2px solid red
+
+.input-error {
+    border: 2px solid #dc3545 !important;
 }
-.error-message.show{
+
+.error-message.show {
     visibility: visible;
     opacity: 1;
 }
 
 .success-message {
-    background-color: #4CAF50;
+    background-color: #28a745;
     color: white;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 4px;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 6px;
     text-align: center;
-    display: none;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.error-message-global {
+    background-color: #dc3545;
+    color: white;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 6px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .forms-container {
+        flex-direction: column;
+    }
+    
+    .form-card {
+        min-width: 100%;
+    }
+    
+    .quick-actions {
+        flex-direction: column;
+    }
+    
+    main {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-card {
+        padding: 15px;
+    }
+    
+    .medicine-item {
+        padding: 15px;
+    }
+    
+    .quick-actions {
+        flex-direction: column;
+    }
+    
+    .quick-update-btn, .quick-delete-btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
 }

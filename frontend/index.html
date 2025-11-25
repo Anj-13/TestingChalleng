@@ -22,28 +22,59 @@
         however it is not particularly user-friendly. 
         How will you create a user-friendly solution that allows users 
         to input data on the site and send it to the backend?-->
-        <form action="">
-            <h2>Add Medicine testing</h2>
-            <div class="form-rows">
-                <label for="name">Name: </label>
-                <input type="text" name="name" id="name" required maxlength="50">
-                <div class="error-message" id="name-error"></div>
-            </div>
-            <br>
-            <div class="form-rows">
-                <label for="price">Price: </label>
-                <input type="number" step="0.01" name="price" id="price">
-                <div class="error-message" id="price-error"></div>
-            </div>
-            <br>
-            <input type="submit" value="Add new medicine">
+        <div class="forms-container">
+            <form id="add-form">
+                <h2>Add Medicine testing</h2>
+                <div class="form-rows">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" required maxlength="50">
+                    <div class="error-message" id="name-error"></div>
+                </div>
+                <br>
+                <div class="form-rows">
+                    <label for="price">Price: </label>
+                    <input type="number" step="0.01" name="price" id="price">
+                    <div class="error-message" id="price-error"></div>
+                </div>
+                <br>
+                <input type="submit" value="Add new medicine">
+            </form>
 
-        </form>
-        <ul id="test-list">
+            <form id="update-form">
+                <h2>Update Medicine</h2>
+                <div class="form-rows">
+                    <label for="update-name">Name: </label>
+                    <input type="text" name="update-name" id="update-name" required maxlength="50">
+                    <div class="error-message" id="update-name-error"></div>
+                </div>
+                <br>
+                <div class="form-rows">
+                    <label for="update-price">New Price: </label>
+                    <input type="number" name="update-price" id="update-price">
+                    <div class="error-message" id="update-price-error"></div>
+                </div>
+                <br>
+                <input type="submit" value="update medicine">
+            </form>
 
-        </ul> <!--ul is unorder list while ol is ordered -->
+            <form id="delete-form">
+                <h2>Delete Medicine</h2>
+                <div class="form-rows">
+                    <label for="delete-name">Medicine: </label>
+                    <input type="text" name="delete-name" id="delete-name-error" required maxlength="50">
+                    <div class="error-message" id="delete-name-error"></div>
+                </div>
+                <br>
+                <input type="submit" value="Delete medicine" clas="delete-btn">
+            </form>
+        </div>
+        <div class="medicines-section">
+            <h2>Medicines List</h2>
+            <ul id="test-list"></ul>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>
 <!--can edit-->
