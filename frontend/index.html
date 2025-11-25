@@ -61,12 +61,25 @@
                 <input type="submit" value="Delete medicine" class="delete-btn">
             </form>
         </div>
-        
-        <div class="medicines-section">
-            <h2>Medicines List</h2>
-            <ul id="test-list"></ul>
+
+        <div class="content-container">
+            <div class="medicines-section">
+                <h2>Medicines List</h2>
+                <ul id="test-list"></ul>
+            </div>
+
+            <div class="stats-section">
+                <h2>Quarterly Report</h2>
+                <div class="stats-card">
+                    <h3>Average Medicine Price</h3>
+                    <p id="average-price">Loading...</p>
+                    <button onclick="loadAveragePrice()">Refresh Report</button>
+                </div>
+            </div>
+        </div>
         </div>
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>

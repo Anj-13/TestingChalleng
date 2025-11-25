@@ -54,6 +54,20 @@ main {
     padding: 20px;
 }
 
+.content-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.medicines-section {
+    flex: 2;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
 /* Forms Container - Side by Side Layout */
 .forms-container {
     display: flex;
@@ -274,6 +288,34 @@ input[type="submit"]:not(.delete-btn):hover {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* stats CSS style */
+
+.stats-section {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.stats-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.stats-card h3 {
+    color: black;
+    margin-bottom: 15px;
+}
+
+.stats-card p {
+    color: limegreen;
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+/* extra */
+
 @media (max-width: 1024px) {
     .forms-container {
         gap: 15px;
@@ -293,5 +335,16 @@ input[type="submit"]:not(.delete-btn):hover {
     .form-card {
         min-width: 100%;
         margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-container{
+        flex-direction: column;
+    }
+
+    .medicines-section, .stats-section {
+        flex: none;
+        width: 100%;
     }
 }

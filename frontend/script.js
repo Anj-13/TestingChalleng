@@ -1,5 +1,25 @@
 // can edit
 
+async function loadAveragePrice() {
+    try{
+        const response = await fetch("http://localhost:8000/average-price");
+            const data = await response.json();
+
+            const avgElement = document.getElementById("average-price");
+            if(data.average_price) {
+                avgElement.innerHTML = `
+                <strong>$${data.average_price}</strong>
+                <br>
+                <small>Based on ${data.medicines_with_valid_prices} medicines </small>`;
+            } else {
+                avgElement.textContent = data.error || "Unable to calculate average";
+            }
+    } catch(error) {
+        console.error("Error loading AVG price:", error);
+        document.getElementById("average-price").textContent = "Error loading report"
+    }
+}
+
 function showError(field, message) {
     const errorElement = document.getElementById(`${field}-error`);
     const inputElement = document.getElementById(field);
@@ -227,6 +247,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             showSuccessMessage("Failed to delete medicine. Please try again.", true);
         }
     }
+
+    loadAveragePrice();
 
     // Initial load
     await loadMedicines();
